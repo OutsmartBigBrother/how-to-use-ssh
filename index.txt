@@ -1,0 +1,58 @@
+https://outsmartbigbrother.com/2021/05/07/how-to-use-secure-shell-ssh/
+
+How to use Secure SHell (SSH)
+Posted on May 7, 2021 by jonathan
+
+SSH (Secure SHell) is used in order to use one computer to control another computer. This can be done over insecure networks (like the Internet) because of the cryptography used to protect the data transferred between the computers involved.
+
+
+In this example, I use Parrot Security OS (a hacking-oriented operating system based on Debian Linux) as the computer that I physically touch and interact with. The other computer (which I remotely control) is my Raspberry Pi single-board computer (SBC), which I have already installed Ubuntu Server on. Ubuntu Server is another Debian-based Linux distro, but the “Server” part of its name means that it only comes with the command-line interface (CLI) and not a graphical user interface (GUI) which most people are used to. By the way, none of these links are affiliates. Feel free to try out substitutes (like a cloud server instead of a Raspberry Pi, Linux Mint instead of Parrot Security, etc.)
+
+Having a CLI means that you do not have the same experience of navigating your computer like the 2-D world of the GUI, but it does reduce the storage footprint of your OS (Graphics take up a lot of space.) Using a CLI can speed up your computer’s processes, and (once you get the hang of it) can also speed up your own processes of navigating your computer. Plus, when you use a CLI, it makes you look like a total badass in front of your friends and family!
+
+
+Open terminal in Parrot Security OS
+To start, you need to make sure that you have SSH already on both computers. From what I recall, both of my computers in this situation included SSH capability automatically when I installed each OS.
+
+In this example, I assume:
+
+You already have an account with the server that you are trying to SSH into,
+You know your username, password, and IP address for the host that you want to SSH into.
+How to SSH
+Open a terminal and type the following command. Replace “USERNAME” with your actual username and “IP_ADDRESS” with your actual IP address. Keep in mind, these credentials are for the target computer, not the computer you are already using.
+
+ssh USERNAME@IP_ADDRESS
+Press the “Enter” key.
+
+The server will prompt you to enter your passphrase (again, for the target computer).
+
+After typing your passphrase, press “Enter”.
+
+If you are prompted whether you are sure or not that you want to connect, select in the affirmative (unless you don’t want to connect. I’m not the boss of you).
+
+You should now be connected to the target computer. Congratulations!
+
+Notice how the username and hostname of your command prompt has changed. Here is a picture of my original terminal (left) for my Parrot Security computer, and my SSH terminal (right) for my remote server.
+
+
+While normally you are only capable of controlling only the computer that is physically present where you are, SSH-ing into another machine enables you to choose which machine you use to perform tasks.
+
+“jonathan@parrot” means that I am interacting as the user “jonathan” on the machine named “parrot”.
+
+Likewise, “flossboss@smartsauce” means that I am interacting as the user “flossboss” on the machine named “smartsauce”. However, if you use a similar arrangement to what I have set up here, your remote server terminal will probably look more like “ubuntu@ubuntu”, since that is the default for Ubuntu Server. I have already changed both my username and hostname for this server, so that is why it looks unique.
+
+Once you are finished with what you wanted to do through your remote server, you can close the connection by typing the following simple command in your remote terminal.
+
+logout
+There. That wasn’t so bad, now was it?
+
+⌨️
+
+Notes
+Music by aldermansweden from Pixabay
+
+Terminal vector graphic by OpenClipart-Vectors from Pixabay
+
+Keyboard vector graphic by OpenClipart-Vectors from Pixabay
+
+All OBB content is subject to our Terms of Service.
